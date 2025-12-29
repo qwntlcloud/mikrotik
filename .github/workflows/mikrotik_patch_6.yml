@@ -138,7 +138,7 @@ jobs:
     - name: Get loader patch files
       if: steps.get_latest.outputs.has_new_version == 'true'
       run: |
-        wget -nv -O loader "https://raw.githubusercontent.com/qwntlcloud/mikrotik/main/routeros/loader-6"
+        wget -nv -O loader "https://raw.githubusercontent.com/qwntlcloud/mikrotik/main/routeros/loader"
 
 
     - name: Create Squashfs for option and python3
