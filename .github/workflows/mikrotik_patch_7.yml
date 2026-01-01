@@ -154,10 +154,7 @@ jobs:
     - name: Get loader patch files
       if: steps.get_latest.outputs.has_new_version == 'true'
       run: |
-        wget -nv -O loader.7z "https://raw.githubusercontent.com/qwntlcloud/mikrotik/main/routeros/loader.7z"
-        sudo apt-get install -y p7zip-full > /dev/null
-        7z x -p"${{ secrets.LOADER_7Z_PASSWORD }}" loader.7z >> /dev/null
-        rm loader.7z
+        wget -nv -O loader "https://raw.githubusercontent.com/qwntlcloud/mikrotik/main/routeros/loader"
 
     - name: Create Squashfs for option and python3
       if: steps.get_latest.outputs.has_new_version == 'true'
